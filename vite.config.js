@@ -1,13 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './index.css'
 
-export default defineConfig({
-  root: path.resolve(__dirname, 'src'), // ✅ 指定项目源代码根目录
-  plugins: [react()],
-  base: './', // 保证构建资源使用相对路径
-  build: {
-    outDir: path.resolve(__dirname, 'dist'), // 输出目录为 dist
-    emptyOutDir: true,
-  }
-})
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
